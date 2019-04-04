@@ -249,18 +249,8 @@
       <concept id="6238098797407520605" name="xjsnark.structure.BitsOp" flags="ng" index="1VPAEj" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
   </registry>
@@ -353,48 +343,6 @@
       <property role="DRO8Q" value="Note also that xjsnark class variables should not be declared as final or static" />
     </node>
     <node concept="2tJIrI" id="6HN16kFhe3n" role="jymVt" />
-    <node concept="2tJIrI" id="6HN16kFhe3o" role="jymVt" />
-    <node concept="1X3_iC" id="12D3z1sdr0m" role="lGtFl">
-      <property role="3V$3am" value="member" />
-      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" />
-      <node concept="DJdLC" id="6HN16kFhe3p" role="8Wnug">
-        <property role="DRO8Q" value="here we use a RAM, not an array, as the sBox is being accessed randomly. We do initialization later. " />
-      </node>
-    </node>
-    <node concept="1X3_iC" id="12D3z1sdr0n" role="lGtFl">
-      <property role="3V$3am" value="member" />
-      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" />
-      <node concept="312cEg" id="6HN16kFhe3q" role="8Wnug">
-        <property role="34CwA1" value="false" />
-        <property role="eg7rD" value="false" />
-        <property role="TrG5h" value="sBoxMem" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3Tm6S6" id="6HN16kFhe3r" role="1B3o_S" />
-        <node concept="SEaj5" id="6HN16kFhe3s" role="1tU5fm">
-          <node concept="3qc1$W" id="6HN16kFhe3t" role="SEaiP">
-            <property role="3qc1Xj" value="8" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1X3_iC" id="12D3z1sdr0o" role="lGtFl">
-      <property role="3V$3am" value="member" />
-      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" />
-      <node concept="312cEg" id="12D3z1rIoxO" role="8Wnug">
-        <property role="34CwA1" value="false" />
-        <property role="eg7rD" value="false" />
-        <property role="TrG5h" value="invsBoxMem" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3Tm6S6" id="12D3z1rIoxP" role="1B3o_S" />
-        <node concept="SEaj5" id="12D3z1rIoxQ" role="1tU5fm">
-          <node concept="3qc1$W" id="12D3z1rIoxR" role="SEaiP">
-            <property role="3qc1Xj" value="8" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6HN16kFhe3u" role="jymVt" />
-    <node concept="2tJIrI" id="6HN16kFhe3v" role="jymVt" />
     <node concept="DJdLC" id="6HN16kFhe3w" role="jymVt">
       <property role="DRO8Q" value="in real contexts, the key and the plaintext are usually witnesses, but just for simplicity now" />
     </node>
@@ -451,7 +399,7 @@
                 <ref role="3cqZAo" node="12D3z1sdNGa" resolve="decryptor" />
               </node>
               <node concept="liA8E" id="12D3z1sdTf0" role="2OqNvi">
-                <ref role="37wK5l" node="12D3z1sdmdS" resolve="outsource" />
+                <ref role="37wK5l" node="12D3z1sdmdS" resolve="decrypt" />
               </node>
             </node>
             <node concept="37vLTw" id="12D3z1sdT6V" role="37vLTJ">
@@ -569,7 +517,7 @@
               <node concept="1rXfSq" id="12D3z1qaQDy" role="33vP2m">
                 <ref role="37wK5l" node="12D3z1qaO$$" resolve="fromHexString" />
                 <node concept="Xl_RD" id="12D3z1qaQO7" role="37wK5m">
-                  <property role="Xl_RC" value="000102030405060708090a0b0c0d0e0f" />
+                  <property role="Xl_RC" value="2b7e151628aed2a6abf7158809cf4f3c" />
                 </node>
               </node>
             </node>
@@ -584,7 +532,7 @@
               <node concept="1rXfSq" id="12D3z1qeNpF" role="33vP2m">
                 <ref role="37wK5l" node="12D3z1qaO$$" resolve="fromHexString" />
                 <node concept="Xl_RD" id="12D3z1qeODb" role="37wK5m">
-                  <property role="Xl_RC" value="69c4e0d86a7b0430d8cdb78070b4c55a" />
+                  <property role="Xl_RC" value="3ad77bb40d7a3660a89ecaf32466ef97" />
                 </node>
               </node>
             </node>
@@ -876,7 +824,7 @@
               <node concept="liA8E" id="6HN16kFhel$" role="2OqNvi">
                 <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
                 <node concept="Xl_RD" id="6HN16kFhel_" role="37wK5m">
-                  <property role="Xl_RC" value="Expected Output: 00112233445566778899aabbccddeeff" />
+                  <property role="Xl_RC" value="Expected Output: 6bc1bee22e409f96e93d7e117393172a" />
                 </node>
               </node>
             </node>
@@ -2791,7 +2739,7 @@
     <node concept="2tJIrI" id="12D3z1sdy1O" role="jymVt" />
     <node concept="3clFb_" id="12D3z1sdmdS" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="outsource" />
+      <property role="TrG5h" value="decrypt" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />

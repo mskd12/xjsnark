@@ -1,0 +1,12 @@
+*/trace.info
+languages/xjsnark/source_gen/*
+languages/xjsnark/source_gen.caches/*
+languages/xjsnark/sandbox/source_gen.caches/*
+languages/xjsnark/sandbox/source_gen/*
+
+# MPS
+.mps/*
+
+# Compiled class file
+*.class
+
