@@ -3557,9 +3557,7 @@
       </node>
       <node concept="37vLTG" id="12D3z1qaO_0" role="3clF46">
         <property role="TrG5h" value="src" />
-        <node concept="3uibUv" id="12D3z1qaO_1" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-        </node>
+        <node concept="17QB3L" id="1vqJXIu4TmC" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="12D3z1qaO_2" role="1B3o_S" />
     </node>
