@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:3255fc5c-e9da-4f5e-bdec-a9bfc2cc070a(xjsnark.tls1_2)">
+<model ref="r:3255fc5c-e9da-4f5e-bdec-a9bfc2cc070a(xjsnark.tls1_2_aes128_sha256)">
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
@@ -25,6 +25,7 @@
       </concept>
       <concept id="1215695189714" name="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" flags="nn" index="d57v9" />
       <concept id="1153422105332" name="jetbrains.mps.baseLanguage.structure.RemExpression" flags="nn" index="2dk9JS" />
+      <concept id="1153422305557" name="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" flags="nn" index="2dkUwp" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1179360813171" name="jetbrains.mps.baseLanguage.structure.HexIntegerLiteral" flags="nn" index="2nou5x">
         <property id="1179360856892" name="value" index="2noCCI" />
@@ -157,7 +158,6 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
-      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
@@ -227,6 +227,9 @@
       <concept id="7495353643616961541" name="xjsnark.structure.SingleLineCommentClassMember" flags="ng" index="DJdLC">
         <property id="7495353643619293787" name="text" index="DRO8Q" />
       </concept>
+      <concept id="7553992366094736353" name="xjsnark.structure.VerifyStatement" flags="ng" index="2DKZvD">
+        <child id="7553992366094744703" name="condition" index="2DKX1R" />
+      </concept>
       <concept id="2280652580002804071" name="xjsnark.structure.MemoryAccessExpression" flags="ng" index="SwV0n">
         <child id="2280652580002804074" name="index" index="SwV0q" />
         <child id="2280652580002804076" name="memory" index="SwV0s" />
@@ -293,7 +296,7 @@
     <property role="1EXbeo" value="true" />
     <property role="2bfB8j" value="true" />
     <property role="1sVAO0" value="false" />
-    <property role="TrG5h" value="TLS1_2" />
+    <property role="TrG5h" value="AES128_SHA256" />
     <node concept="Wx3nA" id="1vqJXIu4lI4" role="jymVt">
       <property role="TrG5h" value="AES_BLOCK_SIZE" />
       <property role="2dlcS1" value="false" />
@@ -339,15 +342,18 @@
       <node concept="10Oyi0" id="1vqJXIu4lIj" role="1tU5fm" />
       <node concept="17qRlL" id="1vqJXIu4lIk" role="33vP2m">
         <node concept="3cmrfG" id="1vqJXIu4lIl" role="3uHU7B">
-          <property role="3cmrfH" value="16" />
+          <property role="3cmrfH" value="64" />
         </node>
         <node concept="3cmrfG" id="1vqJXIu4lIm" role="3uHU7w">
-          <property role="3cmrfH" value="40" />
+          <property role="3cmrfH" value="25" />
         </node>
       </node>
       <node concept="3Tm6S6" id="1vqJXIu4lIn" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="1vqJXIu4lIo" role="jymVt" />
+    <node concept="DJdLC" id="45QlTvckBPn" role="jymVt">
+      <property role="DRO8Q" value="AAD + Plaintext along with necessary padding for HMAC." />
+    </node>
     <node concept="3Tm1VV" id="1vqJXIu4lIp" role="1B3o_S" />
     <node concept="312cEg" id="1vqJXIu4lIz" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -383,6 +389,20 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="45QlTvckj5D" role="jymVt" />
+    <node concept="DJdLC" id="45QlTvckdq5" role="jymVt">
+      <property role="DRO8Q" value="Prover inputs the last three blocks of plaintext that is guaranteed to contain the tag." />
+    </node>
+    <node concept="312cEg" id="1vqJXIv84EP" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="tagOffset" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3qc1$W" id="1vqJXIv83Jm" role="1tU5fm">
+        <property role="3qc1Xj" value="32" />
+      </node>
+      <node concept="3Tm1VV" id="1vqJXIv85AT" role="1B3o_S" />
+    </node>
     <node concept="312cEg" id="1vqJXIutrpR" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -412,48 +432,21 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="1vqJXIv84EP" role="jymVt">
+    <node concept="312cEg" id="27vDM5$7HPv" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="tagOffset" />
+      <property role="TrG5h" value="ram_arr1" />
       <property role="3TUv4t" value="false" />
-      <node concept="3qc1$W" id="1vqJXIv83Jm" role="1tU5fm">
-        <property role="3qc1Xj" value="32" />
-      </node>
-      <node concept="3Tm1VV" id="1vqJXIv85AT" role="1B3o_S" />
-    </node>
-    <node concept="312cEg" id="1vqJXIu4lIU" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="encryptedTag" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm1VV" id="1vqJXIu4lIV" role="1B3o_S" />
-      <node concept="10Q1$e" id="1vqJXIu4lIW" role="1tU5fm">
-        <node concept="3qc1$W" id="1vqJXIu4lIX" role="10Q1$1">
+      <node concept="SEaj5" id="27vDM5$7FDx" role="1tU5fm">
+        <node concept="3qc1$W" id="27vDM5$7HOA" role="SEaiP">
           <property role="3qc1Xj" value="8" />
         </node>
       </node>
-      <node concept="2ShNRf" id="1vqJXIu4lIY" role="33vP2m">
-        <node concept="3$_iS1" id="1vqJXIu4lIZ" role="2ShVmc">
-          <node concept="3$GHV9" id="1vqJXIu4lJ0" role="3$GQph">
-            <node concept="17qRlL" id="1vqJXIut_KS" role="3$I4v7">
-              <node concept="37vLTw" id="1vqJXIv7Vil" role="3uHU7w">
-                <ref role="3cqZAo" node="1vqJXIu4lI4" resolve="AES_BLOCK_SIZE" />
-              </node>
-              <node concept="3cmrfG" id="1vqJXIut_xh" role="3uHU7B">
-                <property role="3cmrfH" value="3" />
-              </node>
-            </node>
-          </node>
-          <node concept="3qc1$W" id="1vqJXIu4lJ2" role="3$_nBY">
-            <property role="3qc1Xj" value="8" />
-          </node>
-        </node>
-      </node>
+      <node concept="3Tm1VV" id="27vDM5$7MLv" role="1B3o_S" />
     </node>
-    <node concept="2tJIrI" id="1vqJXIu4lIA" role="jymVt" />
+    <node concept="2tJIrI" id="45QlTvckbri" role="jymVt" />
     <node concept="DJdLC" id="1vqJXIu4lIB" role="jymVt">
-      <property role="DRO8Q" value="Encryption related params" />
+      <property role="DRO8Q" value="AES-CBC params. Last three plaintext blocks are encrypted." />
     </node>
     <node concept="312cEg" id="1vqJXIu4lIC" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -482,7 +475,7 @@
     <node concept="312cEg" id="1vqJXIu4lIL" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="iv" />
+      <property role="TrG5h" value="prevCipherBlock" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm1VV" id="1vqJXIu4lIM" role="1B3o_S" />
       <node concept="10Q1$e" id="1vqJXIu4lIN" role="1tU5fm">
@@ -503,9 +496,42 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="45QlTvcktOH" role="jymVt" />
+    <node concept="DJdLC" id="45QlTvckxM6" role="jymVt">
+      <property role="DRO8Q" value="Circuit outputs the encrypted tag." />
+    </node>
+    <node concept="312cEg" id="1vqJXIu4lIU" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="encryptedTag" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm1VV" id="1vqJXIu4lIV" role="1B3o_S" />
+      <node concept="10Q1$e" id="1vqJXIu4lIW" role="1tU5fm">
+        <node concept="3qc1$W" id="1vqJXIu4lIX" role="10Q1$1">
+          <property role="3qc1Xj" value="8" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="1vqJXIu4lIY" role="33vP2m">
+        <node concept="3$_iS1" id="1vqJXIu4lIZ" role="2ShVmc">
+          <node concept="3$GHV9" id="1vqJXIu4lJ0" role="3$GQph">
+            <node concept="17qRlL" id="1vqJXIut_KS" role="3$I4v7">
+              <node concept="37vLTw" id="45QlTvckvJx" role="3uHU7w">
+                <ref role="3cqZAo" node="1vqJXIu4lI4" resolve="AES_BLOCK_SIZE" />
+              </node>
+              <node concept="3cmrfG" id="1vqJXIut_xh" role="3uHU7B">
+                <property role="3cmrfH" value="3" />
+              </node>
+            </node>
+          </node>
+          <node concept="3qc1$W" id="1vqJXIu4lJ2" role="3$_nBY">
+            <property role="3qc1Xj" value="8" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="1vqJXIu4lJ3" role="jymVt" />
     <node concept="DJdLC" id="1vqJXIu4lJ4" role="jymVt">
-      <property role="DRO8Q" value="HMAC related params" />
+      <property role="DRO8Q" value="HMAC params" />
     </node>
     <node concept="312cEg" id="1vqJXIu4lJj" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -532,25 +558,12 @@
       </node>
     </node>
     <node concept="2tJIrI" id="27vDM5$7BkT" role="jymVt" />
-    <node concept="312cEg" id="27vDM5$7HPv" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="ram_arr1" />
-      <property role="3TUv4t" value="false" />
-      <node concept="SEaj5" id="27vDM5$7FDx" role="1tU5fm">
-        <node concept="3qc1$W" id="27vDM5$7HOA" role="SEaiP">
-          <property role="3qc1Xj" value="8" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="27vDM5$7MLv" role="1B3o_S" />
-    </node>
-    <node concept="2tJIrI" id="27vDM5$7z07" role="jymVt" />
     <node concept="3q8xyn" id="1vqJXIu4lJt" role="jymVt">
       <node concept="37vLTw" id="1vqJXIu4lJu" role="3q8w2r">
         <ref role="3cqZAo" node="1vqJXIu4lJj" resolve="keyMAC" />
       </node>
       <node concept="37vLTw" id="1vqJXIutobd" role="3q8w2r">
-        <ref role="3cqZAo" node="1vqJXIu4lIL" resolve="iv" />
+        <ref role="3cqZAo" node="1vqJXIu4lIL" resolve="prevCipherBlock" />
       </node>
     </node>
     <node concept="DJdLC" id="1vqJXIu4lJv" role="jymVt">
@@ -591,35 +604,39 @@
       <node concept="3cqZAl" id="1vqJXIu4lJI" role="3clF45" />
       <node concept="3Tm1VV" id="1vqJXIu4lJJ" role="1B3o_S" />
       <node concept="3clFbS" id="1vqJXIu4lJK" role="3clF47">
-        <node concept="1X3_iC" id="1vqJXIu4lJL" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="3clFbJ" id="1vqJXIu4lJM" role="8Wnug">
-            <node concept="3clFbS" id="1vqJXIu4lJN" role="3clFbx">
-              <node concept="YS8fn" id="1vqJXIu4lJO" role="3cqZAp">
-                <node concept="2ShNRf" id="1vqJXIu4lJP" role="YScLw">
-                  <node concept="1pGfFk" id="1vqJXIu4lJQ" role="2ShVmc">
-                    <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
-                    <node concept="Xl_RD" id="1vqJXIu4lJR" role="37wK5m">
-                      <property role="Xl_RC" value="Increase MAX_INPUT_SIZE!" />
-                    </node>
-                  </node>
-                </node>
+        <node concept="2DKZvD" id="45QlTvbE9fx" role="3cqZAp">
+          <node concept="2dkUwp" id="45QlTvbE9Vt" role="2DKX1R">
+            <node concept="37vLTw" id="1vqJXIu4lJW" role="3uHU7B">
+              <ref role="3cqZAo" node="1vqJXIu4lIz" resolve="numBytes" />
+            </node>
+            <node concept="3SuevK" id="1vqJXIu4lJT" role="3uHU7w">
+              <node concept="3qc1$W" id="1vqJXIu4lJU" role="3SuevR">
+                <property role="3qc1Xj" value="32" />
+              </node>
+              <node concept="37vLTw" id="45QlTvbE9zA" role="3Sueug">
+                <ref role="3cqZAo" node="1vqJXIu4lIi" resolve="MAX_INPUT_SIZE" />
               </node>
             </node>
-            <node concept="3eOSWO" id="1vqJXIu4lJS" role="3clFbw">
-              <node concept="3SuevK" id="1vqJXIu4lJT" role="3uHU7w">
-                <node concept="3qc1$W" id="1vqJXIu4lJU" role="3SuevR">
-                  <property role="3qc1Xj" value="32" />
-                </node>
-                <node concept="37vLTw" id="1vqJXIu4lJV" role="3Sueug">
-                  <ref role="3cqZAo" node="1vqJXIu4lIi" resolve="MAX_INPUT_SIZE" />
-                </node>
+          </node>
+        </node>
+        <node concept="2DKZvD" id="45QlTvcbIMl" role="3cqZAp">
+          <node concept="3eOVzh" id="45QlTvcbJyN" role="2DKX1R">
+            <node concept="37vLTw" id="45QlTvcbJ3o" role="3uHU7B">
+              <ref role="3cqZAo" node="1vqJXIv84EP" resolve="tagOffset" />
+            </node>
+            <node concept="3SuevK" id="45QlTvcbJbn" role="3uHU7w">
+              <node concept="3qc1$W" id="45QlTvcbJbp" role="3SuevR">
+                <property role="3qc1Xj" value="32" />
               </node>
-              <node concept="37vLTw" id="1vqJXIu4lJW" role="3uHU7B">
-                <ref role="3cqZAo" node="1vqJXIu4lIz" resolve="numBytes" />
+              <node concept="37vLTw" id="45QlTvcbJlx" role="3Sueug">
+                <ref role="3cqZAo" node="1vqJXIu4lI4" resolve="AES_BLOCK_SIZE" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3kzJqhDpjff" role="3cqZAp">
+          <node concept="3SKdUq" id="3kzJqhDpjfh" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: add check to sequence number" />
           </node>
         </node>
         <node concept="3clFbH" id="1vqJXIu4lJX" role="3cqZAp" />
@@ -747,7 +764,7 @@
                               <ref role="3cqZAo" node="1vqJXIu4lLa" resolve="j" />
                             </node>
                             <node concept="37vLTw" id="1vqJXIu4lKE" role="AHHXb">
-                              <ref role="3cqZAo" node="1vqJXIu4lIL" resolve="iv" />
+                              <ref role="3cqZAo" node="1vqJXIu4lIL" resolve="prevCipherBlock" />
                             </node>
                           </node>
                           <node concept="AH0OO" id="1vqJXIu4lKF" role="3uHU7B">
@@ -1055,15 +1072,6 @@
     <node concept="2tJIrI" id="1vqJXIu4lMj" role="jymVt" />
     <node concept="DJdLC" id="1vqJXIu4QLF" role="jymVt">
       <property role="DRO8Q" value="AES-CBC (3 blocks) and HMAC" />
-    </node>
-    <node concept="DJdLC" id="1vqJXIu4JQS" role="jymVt">
-      <property role="DRO8Q" value="iv: 8e5229b71b882248b916029d444b7907" />
-    </node>
-    <node concept="DJdLC" id="1vqJXIu4MS1" role="jymVt">
-      <property role="DRO8Q" value="plaintext: 6a6b6c6d6e6f7071727374757697fce6ec28c9898f0355da243a8e5f1e29470bd4e0812f8e9cd3ba4f500c2c33020202" />
-    </node>
-    <node concept="DJdLC" id="1vqJXIu4OLY" role="jymVt">
-      <property role="DRO8Q" value="ciphertext: 78b41f2898dd1d5bdbcfe1fa6f51d0c33fbdc3b7abade38873877a87b65cc1c78022a66e18dfe5ecbb7292bb826b17e8" />
     </node>
     <node concept="1UYk92" id="1vqJXIu4lR0" role="jymVt">
       <property role="3jfa3H" value="SampleTest_Full" />
@@ -1643,7 +1651,7 @@
               </node>
               <node concept="2OqwBi" id="1vqJXIu4lVt" role="3uHU7w">
                 <node concept="37vLTw" id="1vqJXIu4lVu" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1vqJXIu4lIL" resolve="iv" />
+                  <ref role="3cqZAo" node="1vqJXIu4lIL" resolve="prevCipherBlock" />
                 </node>
                 <node concept="1Rwk04" id="1vqJXIu4lVv" role="2OqNvi" />
               </node>
@@ -1681,7 +1689,7 @@
                         <ref role="3cqZAo" node="1vqJXIu4lVo" resolve="i" />
                       </node>
                       <node concept="37vLTw" id="1vqJXIu4lVJ" role="AHHXb">
-                        <ref role="3cqZAo" node="1vqJXIu4lIL" resolve="iv" />
+                        <ref role="3cqZAo" node="1vqJXIu4lIL" resolve="prevCipherBlock" />
                       </node>
                     </node>
                     <node concept="2Ds8w2" id="1vqJXIu4lVK" role="2OqNvi" />
