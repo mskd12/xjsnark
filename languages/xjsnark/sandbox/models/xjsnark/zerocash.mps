@@ -1320,7 +1320,7 @@
         <node concept="3clFbH" id="72llHG25s7U" role="3cqZAp" />
         <node concept="3SKdUt" id="72llHG27a$Y" role="3cqZAp">
           <node concept="3SKdUq" id="72llHG27a_0" role="3SKWNk">
-            <property role="3SKdUp" value="verify the knowedlge of the secret keys" />
+            <property role="3SKdUp" value="verify the knowledge of the secret keys" />
           </node>
         </node>
         <node concept="3clFbF" id="72llHG27aDf" role="3cqZAp">
@@ -1821,10 +1821,14 @@
         <node concept="3clFbH" id="7exrx8Qcmza" role="3cqZAp" />
         <node concept="3SKdUt" id="72llHG290QM" role="3cqZAp">
           <node concept="3SKdUq" id="72llHG290QO" role="3SKWNk">
-            <property role="3SKdUp" value="verifying there are no overflows (the positivity of the values is guaranteed by the backend)" />
+            <property role="3SKdUp" value="Verifying that there are no overflows. Adding two uint_64 variables directly could overflow mod 2^64" />
           </node>
         </node>
-        <node concept="3clFbH" id="7exrx8Qcrow" role="3cqZAp" />
+        <node concept="3SKdUt" id="7HhDHXGnsUc" role="3cqZAp">
+          <node concept="3SKdUq" id="7HhDHXGnsUe" role="3SKWNk">
+            <property role="3SKdUp" value="To detect an overflow, we do the check in a larger range" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="7exrx8Qcsbj" role="3cqZAp">
           <node concept="3cpWsn" id="7exrx8Qcsbm" role="3cpWs9">
             <property role="TrG5h" value="sum" />
@@ -4817,6 +4821,22 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="48KKYcY_K6X" role="3cqZAp" />
+        <node concept="1X3_iC" id="48KKYcY_K5O" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="48KKYcY_JFZ" role="8Wnug">
+            <node concept="37vLTI" id="48KKYcY_K1h" role="3clFbG">
+              <node concept="3clFbT" id="48KKYcY_K4k" role="37vLTx">
+                <property role="3clFbU" value="true" />
+              </node>
+              <node concept="10M0yZ" id="48KKYcY_JFY" role="37vLTJ">
+                <ref role="1PxDUh" to="85wc:~Config" resolve="Config" />
+                <ref role="3cqZAo" to="85wc:~Config.arithOptimizerIncrementalMode" resolve="arithOptimizerIncrementalMode" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="7MHE_1gqibW" role="3cqZAp" />
         <node concept="3SKdUt" id="3SVFzjR4I3j" role="3cqZAp">
           <node concept="3SKdUq" id="3SVFzjR4I3l" role="3SKWNk">
@@ -4825,12 +4845,12 @@
         </node>
         <node concept="3SKdUt" id="3SVFzjR4JbD" role="3cqZAp">
           <node concept="3SKdUq" id="3SVFzjR4JbF" role="3SKWNk">
-            <property role="3SKdUp" value="- If the multivariate optimizer is enabled, it will require high memory usage (about 7G " />
+            <property role="3SKdUp" value="- If the multivariate optimizer is enabled, it will require high memory usage (about 5~6G " />
           </node>
         </node>
         <node concept="3SKdUt" id="7MHE_1gqiBy" role="3cqZAp">
           <node concept="3SKdUq" id="7MHE_1gqiBz" role="3SKWNk">
-            <property role="3SKdUp" value=" according to experiments." />
+            <property role="3SKdUp" value=" if the Config.arithOptimizerIncrementalMode is enabled." />
           </node>
         </node>
         <node concept="3SKdUt" id="3SVFzjR4JQK" role="3cqZAp">
