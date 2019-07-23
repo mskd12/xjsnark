@@ -1445,7 +1445,7 @@
               <ref role="1PxDUh" to="85wc:~Config" resolve="Config" />
             </node>
             <node concept="Xl_RD" id="7BX0Qnv$HL9" role="37vLTx">
-              <property role="Xl_RC" value="/home/mskd/Desktop/deco/circuits/" />
+              <property role="Xl_RC" value="/home/deepak/Desktop/deco/circuits/" />
             </node>
           </node>
         </node>
