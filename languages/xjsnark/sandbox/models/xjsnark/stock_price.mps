@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:af7dec6e-1d06-4aff-98b9-4db2524a8dfb(xjsnark.strings)">
+<model ref="r:4927a850-d6c7-4c57-9bf3-01de40278daf(stock_price)">
   <persistence version="9" />
   <languages>
     <use id="0688d542-e2a3-492c-a31f-0e921fd6a8fb" name="xjsnark" version="0" />
@@ -457,6 +457,9 @@
     <node concept="zxlm7" id="XxR_Z7_JSt" role="jymVt" />
     <node concept="3qc$_m" id="XxR_Z7_JSu" role="jymVt" />
     <node concept="2tJIrI" id="XxR_Z7_JSv" role="jymVt" />
+    <node concept="DJdLC" id="2lpxttbKHxE" role="jymVt">
+      <property role="DRO8Q" value="Dummy example file to test out." />
+    </node>
     <node concept="3clFb_" id="XxR_Z7_JSx" role="jymVt">
       <property role="TrG5h" value="outsource" />
       <node concept="3cqZAl" id="XxR_Z7_JSy" role="3clF45" />
@@ -1893,7 +1896,18 @@
     </node>
     <node concept="3qc$_m" id="4jIAKenhUwr" role="jymVt" />
     <node concept="2tJIrI" id="4jIAKenhUws" role="jymVt" />
-    <node concept="2tJIrI" id="4jIAKenhUwt" role="jymVt" />
+    <node concept="DJdLC" id="2lpxttbKISh" role="jymVt">
+      <property role="DRO8Q" value="Stock Price Response (CBC-HMAC, Redact)" />
+    </node>
+    <node concept="DJdLC" id="2lpxttbKNkG" role="jymVt">
+      <property role="DRO8Q" value="1) Compute SHA-2 of redacted blocks." />
+    </node>
+    <node concept="DJdLC" id="2lpxttbKS2z" role="jymVt">
+      <property role="DRO8Q" value="2) Computes commitments to input attributes (name, date, price)." />
+    </node>
+    <node concept="DJdLC" id="2lpxttbKWTd" role="jymVt">
+      <property role="DRO8Q" value="3) Parses key-value pairs in ZK and outputs a single bit - current_price &gt;= input_price." />
+    </node>
     <node concept="3clFb_" id="4jIAKenhUwu" role="jymVt">
       <property role="TrG5h" value="outsource" />
       <node concept="3cqZAl" id="4jIAKenhUwv" role="3clF45" />
@@ -8290,7 +8304,9 @@
     </node>
     <node concept="3qc$_m" id="1c3L21IF1$u" role="jymVt" />
     <node concept="2tJIrI" id="1c3L21IF1$v" role="jymVt" />
-    <node concept="2tJIrI" id="1c3L21IF1$w" role="jymVt" />
+    <node concept="DJdLC" id="2lpxttbL1kI" role="jymVt">
+      <property role="DRO8Q" value="Stock Price Request (CBC-HMAC, Redact): Redacted plaintext is compared with the actual one." />
+    </node>
     <node concept="3clFb_" id="1c3L21IF1$x" role="jymVt">
       <property role="TrG5h" value="outsource" />
       <node concept="3cqZAl" id="1c3L21IF1$y" role="3clF45" />

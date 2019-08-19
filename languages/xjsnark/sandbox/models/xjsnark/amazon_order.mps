@@ -785,7 +785,10 @@
     <node concept="3qc$_m" id="3kzJqhDy6lt" role="jymVt" />
     <node concept="2tJIrI" id="3kzJqhDy6lu" role="jymVt" />
     <node concept="DJdLC" id="3kzJqhDy6lv" role="jymVt">
-      <property role="DRO8Q" value="entry point" />
+      <property role="DRO8Q" value="First attempt at the Amazon order example (Not used in the end)." />
+    </node>
+    <node concept="DJdLC" id="2lpxttbJPwc" role="jymVt">
+      <property role="DRO8Q" value="Computes HMAC and AES-CBC in the circuit causing it to be quite expensive." />
     </node>
     <node concept="3clFb_" id="3kzJqhDy6lw" role="jymVt">
       <property role="TrG5h" value="outsource" />

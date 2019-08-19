@@ -402,7 +402,10 @@
     <node concept="3qc$_m" id="7BX0QnwD$N$" role="jymVt" />
     <node concept="2tJIrI" id="7BX0QnwD$N_" role="jymVt" />
     <node concept="DJdLC" id="7BX0QnwD$NA" role="jymVt">
-      <property role="DRO8Q" value="entry point" />
+      <property role="DRO8Q" value="SHA-2 modified to take state as one of the inputs." />
+    </node>
+    <node concept="DJdLC" id="2lpxttbKs3i" role="jymVt">
+      <property role="DRO8Q" value="Used with CBC-HMAC ciphersuite to efficiently prove knowledge of redacted text." />
     </node>
     <node concept="3clFb_" id="7BX0QnwD$NB" role="jymVt">
       <property role="TrG5h" value="outsource" />
